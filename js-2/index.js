@@ -1,4 +1,4 @@
-/* 
+/** 
  *
  * @param {array[{ id: string, quantity: number }]}
  * @param {array[{ id: string, quantity: number }]}
@@ -23,7 +23,7 @@ const mergeArray = (arr1, arr2) => {
   // get unique id in arrays
   const arr1Id = arr1.map(item => item.id).filter((value, index, arr) => arr.indexOf(value) === index);
   const arr2Id = arr2.map(item => item.id).filter((value, index, arr) => arr.indexOf(value) === index);
-  const duplicateId = arr1Id.filter(i => arr2Id.includes(i));
+  const duplicateId = arr1Id.filter(id => arr2Id.includes(id));
   // array with duplicated id
   const newArr = [...arr1, ...arr2].filter(item => duplicateId.includes(item.id));
   newArr.forEach(item => {
@@ -39,6 +39,7 @@ const mergeArray = (arr1, arr2) => {
 
 console.log(mergeArray([
   { id: '1', quantity: 2 },
+  { id: '2', quantity: 2 },
   { id: '2', quantity: 2 },
   { id: '3', quantity: 3 },
   { id: '1', quantity: 3 }],
