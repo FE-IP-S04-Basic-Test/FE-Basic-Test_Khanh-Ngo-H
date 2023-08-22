@@ -56,11 +56,17 @@ const cartList = []
 const addToCart = (id, quantity, ice, sugar) => {
   if (quantity) {
     const product = products.find(item => item.id === id);
-    const iceLevel = ices.find(item => item.amount === ice).label;
-    const sugarLevel = sugars.find(item => item.amount === sugar).label;
-    const totalPrice = product.price * quantity
-    const cartItem = { ...product, quantity, iceLevel, sugarLevel, totalPrice };
-    cartList.push(cartItem);
+    const iceLevel = ices.find(item => item.id === ice).label;
+    const sugarLevel = sugars.find(item => item.id === sugar).label;
+    const totalPrice = product.price * quantity;
+    const cartExisted = cartList.find(cart => cart.id === id && cart.sugarLevel === sugarLevel && cart.iceLevel === iceLevel);
+    if (cartExisted) {
+      cartExisted.quantity += quantity;
+      cartExisted.totalPrice += totalPrice;
+    } else {
+      const cartItem = { ...product, quantity, iceLevel, sugarLevel, totalPrice };
+      cartList.push(cartItem);
+    }
   }
 }
 
@@ -68,7 +74,10 @@ const addToCart = (id, quantity, ice, sugar) => {
 // 2 "Trà sữa truyền thống" with 50% ice and 50% sugar
 // 1 "Trà sữa Thái xanh" with 100% ice and 100% sugar
 
-addToCart(1, 1, 100, 50);
-addToCart(1, 2, 50, 50);
-addToCart(2, 1, 100, 100);
+addToCart(1, 1, 3, 2);
+addToCart(1, 2, 2, 2);
+
+addToCart(2, 1, 3, 3);
+addToCart(2, 7, 3, 3);
+
 console.log(cartList);
