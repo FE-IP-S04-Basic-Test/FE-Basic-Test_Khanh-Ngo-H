@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  padding: 50px 100px;
+}
+
+.tooltip {
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  margin: 20px;
+}
+.tooltip-text {
+  display: none;
+  width: 100px;
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  background-color: #161849;
+  padding: 4px 8px;
+  border-radius: 8px;
+  z-index: 1;
+}
+.tooltip:hover .tooltip-text {
+  display: inline-block;
+}
+.tooltip-top .tooltip-text {
+  bottom: 120%;
+  left: 50%;
+  margin-left: -50px;
+}
+.tooltip-left .tooltip-text {
+  top: -5px;
+  right: 120%;
+}
+.tooltip-right .tooltip-text {
+  top: -5px;
+  left: 120%;
+}
+.tooltip-bottom .tooltip-text {
+  top: 120%;
+  left: 50%;
+  margin-left: -50px;
+}
+
+/*# sourceMappingURL=style.css.map */

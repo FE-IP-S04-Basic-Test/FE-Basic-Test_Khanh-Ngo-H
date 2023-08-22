@@ -1,0 +1,5 @@
+1. On HTML documents, where can we inject CSS and JS files? The reason why?
+
+=> For CSS files, we can inject them in the tag <head></head> of the HTML documents to specify the styles for the overall documents.
+JS files can be injected at the bottom of the <body></body> tag so that after the HTML document render all of the element, therefore we
+can select the elements in the document and add interaction to them.
