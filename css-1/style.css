@@ -1,0 +1,60 @@
+.chip {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f3f3f3;
+  border-radius: 16px;
+  font-size: 13px;
+}
+.chip[class*=disabled] {
+  opacity: 0.5;
+}
+.chip[class*=checked] {
+  padding-right: 34px;
+}
+.chip[class*=checked]::after {
+  content: "";
+  background: url("./ic-check.svg");
+  background-size: cover;
+  position: absolute;
+  width: 15px;
+  height: 12px;
+  margin-left: 8px;
+}
+.chip[class*=primary] {
+  color: #fff;
+  background-color: #7269ef;
+}
+.chip[class*=outline] {
+  background-color: #fff;
+  border: 1px solid #9ea0a8;
+}
+.chip[class*=outline-primary] {
+  color: #7269ef;
+  border: 1px solid #7269ef;
+}
+.chip[class*=checked-primary] {
+  padding-right: 34px;
+}
+.chip[class*=checked-primary]::after {
+  content: "";
+  background: url("./ic-check-white.svg");
+  background-size: cover;
+  position: absolute;
+  width: 15px;
+  height: 12px;
+  margin-left: 8px;
+}
+.chip[class*=checked-primary][class*=outline-primary]::after {
+  content: "";
+  background: url("./ic-check-primary.svg");
+  background-size: cover;
+  position: absolute;
+  width: 15px;
+  height: 12px;
+  margin-left: 8px;
+}
+.chip-sm {
+  padding: 4px 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
